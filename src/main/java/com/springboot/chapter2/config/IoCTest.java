@@ -5,6 +5,8 @@ import org.apache.commons.logging.LogFactory;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
+import com.springboot.chapter2.projo.BussinessPerson;
+import com.springboot.chapter2.projo.Person;
 import com.springboot.chapter2.projo.User;
 
 public class IoCTest {
@@ -14,9 +16,9 @@ public class IoCTest {
 	public static void main(String[] args){
 		
 		ApplicationContext ctx = new AnnotationConfigApplicationContext(AppConfig.class);
-		User user = ctx.getBean(User.class);		
-		log.info(user.getId());
-		log.info(user.getUserName());
+		//User user = ctx.getBean(User.class);		
+		Person person = ctx.getBean(BussinessPerson.class);
+		person.service();
 	}
 	
 }
